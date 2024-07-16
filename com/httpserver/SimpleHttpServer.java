@@ -28,27 +28,12 @@ public class SimpleHttpServer {
                     name = firstLine.substring(startIndex, endIndex);
                     email = "Gowtham@gmail.com";
                 }
-                /*else if(firstLine.contains("POST")){
-                    int startIndex = firstLine.indexOf("/") + 1;
-                    int endIndex = firstLine.indexOf(" HTTP");
-
-                    name = reader.readLine();
-                    email = "Gowtham@gmail.com";
-                }*/
+                
                 if (firstLine.equals("")){
                     break;
                     }
             }
-            while(true){
-                String postmsg = reader.readLine();
-
-                System.out.println(postmsg);
-
-                if(postmsg.equals("")){
-                    break;
-                }
-            }
-
+            
             Employee employee = new Employee(name, email);
             String crlf = "\r\n";
             writer.print("HTTP/1.1 200 OK" + crlf);
